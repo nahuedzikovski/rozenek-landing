@@ -13,6 +13,10 @@
       const key = el.dataset.i18n;
       if (t[key] !== undefined) el.textContent = t[key];
     });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const key = el.dataset.i18nHtml;
+      if (t[key] !== undefined) el.innerHTML = t[key];
+    });
 
     document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
       const key = el.dataset.i18nPlaceholder;

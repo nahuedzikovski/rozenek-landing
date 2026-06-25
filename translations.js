@@ -18,8 +18,8 @@ const TRANSLATIONS = {
     /* Homepage — Hero */
     hero_label:     'Frankfurt am Main · Steuerberatung',
     hero_title_1:   'Ihr Partner für',
-    hero_t2a: 'klare ', hero_t2b: 'Strukturen', hero_t2c: ',',
-    hero_t3a: 'sichere ', hero_t3b: 'Entscheidungen', hero_t3c: ' und nachhaltigen ', hero_t3d: 'Erfolg', hero_t3e: '.',
+    hero_line2: 'klare <em class="kw">Strukturen</em>,',
+    hero_line3: 'sichere <em class="kw">Entscheidungen</em> und nachhaltigen <em class="kw">Erfolg</em>.',
     hero_subtitle:  'Steuerberatung, internationale Unternehmensstrukturen und Vermögensplanung für Unternehmer in DACH, Europa und Israel.',
     stat_years_label:     'Jahre Erfahrung',
     stat_langs_label:     'Sprachen',
@@ -110,8 +110,8 @@ const TRANSLATIONS = {
     /* Homepage — Hero */
     hero_label:     'Frankfurt am Main · Tax Consulting',
     hero_title_1:   'Your partner for',
-    hero_t2a: 'clear ', hero_t2b: 'structures', hero_t2c: ',',
-    hero_t3a: 'confident ', hero_t3b: 'decisions', hero_t3c: ', and sustainable ', hero_t3d: 'success', hero_t3e: '.',
+    hero_line2: 'clear <em class="kw">structures</em>,',
+    hero_line3: 'confident <em class="kw">decisions</em>, and sustainable <em class="kw">success</em>.',
     hero_subtitle:  'Tax consulting, international business structures, and wealth planning for entrepreneurs across DACH, Europe, and Israel.',
     stat_years_label:     'Years Experience',
     stat_langs_label:     'Languages',
@@ -202,8 +202,8 @@ const TRANSLATIONS = {
     /* Homepage — Hero */
     hero_label:     'פרנקפורט · ייעוץ מס',
     hero_title_1:   'השותף שלך',
-    hero_t2a: 'ל', hero_t2b: 'מבנים', hero_t2c: ' ברורים,',
-    hero_t3a: '', hero_t3b: 'החלטות', hero_t3c: ' בטוחות ו', hero_t3d: 'הצלחה', hero_t3e: ' בת-קיימא.',
+    hero_line2: 'ל<em class="kw">מבנים</em> ברורים,',
+    hero_line3: '<em class="kw">החלטות</em> בטוחות ו<em class="kw">הצלחה</em> בת-קיימא.',
     hero_subtitle:  'ייעוץ מס, מבני עסקים בינלאומיים ותכנון עושר ליזמים ברחבי DACH, אירופה וישראל.',
     stat_years_label:     'שנות ניסיון',
     stat_langs_label:     'שפות',
