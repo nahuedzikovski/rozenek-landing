@@ -18,8 +18,8 @@
     }
     .hero-label { font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-bottom: 22px; }
     .hero-title { font-family: var(--serif); font-size: 50px; font-weight: 300; line-height: 1.12; }
-    .hero-title span { display: block; }
-    .hero-title .accent { color: var(--accent); font-style: italic; }
+    .hero-title > span { display: block; }
+    .hero-title .kw { color: var(--accent); font-style: normal; }
     .hero-subtitle { font-size: 13px; color: var(--muted); line-height: 1.85; max-width: 380px; margin-top: 24px; }
     .hero-stats { display: flex; gap: 40px; padding-top: 36px; border-top: 1px solid var(--line); }
     .stat-num { font-family: var(--serif); font-size: 36px; font-weight: 300; color: var(--accent); }
@@ -130,8 +130,8 @@
       <p class="hero-label reveal" data-i18n="hero_label">Frankfurt am Main · Steuerberatung</p>
       <h1 class="hero-title reveal">
         <span data-i18n="hero_title_1">Ihr Partner für</span>
-        <span class="accent" data-i18n="hero_title_2">klare Strukturen,</span>
-        <span class="accent" data-i18n="hero_title_3">sichere Entscheidungen.</span>
+        <span><span data-i18n="hero_t2a">klare </span><em class="kw" data-i18n="hero_t2b">Strukturen</em><span data-i18n="hero_t2c">,</span></span>
+        <span><span data-i18n="hero_t3a">sichere </span><em class="kw" data-i18n="hero_t3b">Entscheidungen</em><span data-i18n="hero_t3c"> und nachhaltigen </span><em class="kw" data-i18n="hero_t3d">Erfolg</em><span data-i18n="hero_t3e">.</span></span>
       </h1>
       <p class="hero-subtitle reveal" data-i18n="hero_subtitle">Steuerberatung, internationale Unternehmensstrukturen und Vermögensplanung für Unternehmer in DACH, Europa und Israel.</p>
     </div>
