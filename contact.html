@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt — Steuerkanzlei Rozenek</title>
+  <meta name="description" content="Kontaktieren Sie Steuerkanzlei Rozenek in Frankfurt am Main.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); min-height: 540px; }
+    .contact-form-col { padding: 64px 48px; border-right: 1px solid var(--line); }
+    .contact-right-col { padding: 64px 48px; }
+    .contact-col-label { font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-bottom: 32px; }
+    .form-group { margin-bottom: 24px; }
+    .form-group label { display: block; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%; padding: 12px 16px;
+      border: 1px solid var(--line); background: transparent;
+      font-family: var(--sans); font-size: 13px; color: var(--text);
+      transition: border-color .2s; outline: none;
+      appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--accent); }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-submit {
+      width: 100%; padding: 16px; background: var(--accent); color: #fff;
+      font-size: 12px; letter-spacing: .1em; text-transform: uppercase;
+      border: none; cursor: pointer; transition: background .2s;
+      font-family: var(--sans);
+    }
+    .form-submit:hover { background: #2e4460; }
+    .form-success {
+      display: none; padding: 20px; border-left: 3px solid var(--accent);
+      background: rgba(61,90,128,.06);
+      font-family: var(--serif); font-style: italic; font-size: 18px;
+      line-height: 1.5; color: var(--text);
+    }
+    .wa-card {
+      border: 1px solid var(--line); padding: 32px; margin-bottom: 40px;
+      transition: border-color .2s;
+    }
+    .wa-card:hover { border-color: var(--accent); }
+    .wa-card-title { font-family: var(--serif); font-size: 28px; font-weight: 300; font-style: italic; margin-bottom: 12px; }
+    .wa-card-text { font-size: 13px; color: var(--muted); margin-bottom: 24px; line-height: 1.7; }
+    .wa-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #25D366; color: #fff; padding: 12px 24px;
+      font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
+      transition: background .2s;
+    }
+    .wa-btn:hover { background: #1da851; }
+    .address-title { font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+    .address-text { font-size: 13px; color: var(--text); line-height: 2; }
+    .address-text a { color: var(--accent); }
+    @media (max-width: 860px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .contact-form-col { padding: 40px 24px; border-right: none; border-bottom: 1px solid var(--line); }
+      .contact-right-col { padding: 40px 24px; }
+    }
+    @media (max-width: 480px) {
+      .contact-form-col, .contact-right-col { padding: 32px 20px; }
+    }
+  </style>
+</head>
+<body>
+<div class="cur" id="cur-dot"></div>
+<div class="cur" id="cur-ring"></div>
+<nav>
+  <a href="index.html" class="nav-logo">Steuerkanzlei Rozenek</a>
+  <div class="nav-links">
+    <a href="services.html" data-i18n="nav_services">Leistungen</a>
+    <a href="about.html"    data-i18n="nav_about">Kanzlei</a>
+    <a href="contact.html" class="active" data-i18n="nav_contact">Kontakt</a>
+  </div>
+  <div class="nav-right">
+    <div class="lang-switcher">
+      <button data-lang="de" class="active">DE</button>
+      <span class="lang-sep">|</span>
+      <button data-lang="en">EN</button>
+      <span class="lang-sep">|</span>
+      <button data-lang="he">עב</button>
+    </div>
+    <a href="contact.html" class="nav-cta" data-i18n="nav_cta">Erstberatung</a>
+  </div>
+  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="services.html" data-i18n="nav_services">Leistungen</a>
+  <a href="about.html"    data-i18n="nav_about">Kanzlei</a>
+  <a href="contact.html"  data-i18n="nav_contact">Kontakt</a>
+  <a href="contact.html" class="nav-cta" style="margin-top:8px" data-i18n="nav_cta">Erstberatung</a>
+  <div class="mobile-lang">
+    <button data-lang="de" class="active">DE</button>
+    <button data-lang="en">EN</button>
+    <button data-lang="he">עב</button>
+  </div>
+</div>
+<div class="page-hero">
+  <p class="page-hero-label reveal">Steuerkanzlei Rozenek</p>
+  <h1 class="page-hero-title reveal" data-i18n="page_contact_title">Kontakt</h1>
+</div>
+<div class="contact-grid">
+  <div class="contact-form-col">
+    <p class="contact-col-label reveal" data-i18n="nav_cta">Erstberatung</p>
+    <form id="contact-form" class="reveal" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="form-group">
+        <label for="name" data-i18n="form_name">Name</label>
+        <input type="text" id="name" name="name" required data-i18n-placeholder="form_name" placeholder="Name">
+      </div>
+      <div class="form-group">
+        <label for="email" data-i18n="form_email">E-Mail</label>
+        <input type="email" id="email" name="email" required data-i18n-placeholder="form_email" placeholder="E-Mail">
+      </div>
+      <div class="form-group">
+        <label for="phone" data-i18n="form_phone">Telefon (optional)</label>
+        <input type="tel" id="phone" name="phone" data-i18n-placeholder="form_phone" placeholder="Telefon (optional)">
+      </div>
+      <div class="form-group">
+        <label for="lang_pref" data-i18n="form_lang">Bevorzugte Sprache</label>
+        <select id="lang_pref" name="lang_preference">
+          <option value="de">Deutsch</option>
+          <option value="en">English</option>
+          <option value="he">עברית</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message" data-i18n="form_message">Ihre Nachricht</label>
+        <textarea id="message" name="message" required data-i18n-placeholder="form_message" placeholder="Ihre Nachricht"></textarea>
+      </div>
+      <button type="submit" class="form-submit" data-i18n="form_submit">Senden</button>
+    </form>
+    <div class="form-success" id="form-success" data-i18n="form_success">
+      Vielen Dank! Wir melden uns in Kürze bei Ihnen.
+    </div>
+  </div>
+  <div class="contact-right-col">
+    <p class="contact-col-label reveal">WhatsApp · Adresse</p>
+    <div class="wa-card reveal">
+      <h3 class="wa-card-title" data-i18n="wa_title">WhatsApp</h3>
+      <p class="wa-card-text" data-i18n="wa_text">Für schnelle Antworten schreiben Sie uns direkt auf WhatsApp.</p>
+      <a class="wa-btn" href="https://wa.me/4969667790680" data-i18n-href="wa" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span data-i18n="wa_btn">Chat öffnen</span>
+      </a>
+    </div>
+    <div class="address-block reveal">
+      <p class="address-title" data-i18n="address_label">Adresse</p>
+      <div class="address-text">
+        Steuerkanzlei Rozenek<br>
+        Schwindstraße 10<br>
+        60325 Frankfurt am Main<br>
+        Deutschland<br><br>
+        <a href="tel:+4969667790680">+49(0)69 66779068-0</a><br>
+        <a href="mailto:info@steuerkanzlei-rozenek.de">info@steuerkanzlei-rozenek.de</a>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">Steuerkanzlei Rozenek</div>
+      <p>Schwindstraße 10<br>60325 Frankfurt am Main<br>+49(0)69 66779068-0<br>info@steuerkanzlei-rozenek.de</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title" data-i18n="footer_col_services">Leistungen</div>
+      <a href="services.html" data-i18n="s1_name">Steueroptimierung</a>
+      <a href="services.html" data-i18n="s2_name">Internationale Strukturen</a>
+      <a href="services.html" data-i18n="s3_name">Vermögensplanung</a>
+      <a href="services.html" data-i18n="s4_name">Digital Consulting</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title" data-i18n="footer_col_firm">Kanzlei</div>
+      <a href="about.html"   data-i18n="nav_about">Kanzlei</a>
+      <a href="contact.html" data-i18n="nav_contact">Kontakt</a>
+      <a href="impressum.html"   data-i18n="footer_impressum">Impressum</a>
+      <a href="datenschutz.html" data-i18n="footer_privacy">Datenschutz</a>
+    </div>
+    <div>
+      <div class="footer-col-title" data-i18n="footer_col_lang">Sprache</div>
+      <div class="footer-flags">🇩🇪 🇬🇧 🇮🇱</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-bottom-left" data-i18n="footer_copy">© 2025 Steuerkanzlei Rozenek · Frankfurt am Main</span>
+    <div class="footer-bottom-right">
+      <a href="impressum.html"   data-i18n="footer_impressum">Impressum</a>
+      <a href="datenschutz.html" data-i18n="footer_privacy">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+<script src="translations.js"></script>
+<script src="i18n.js"></script>
+<script src="main.js"></script>
+<script>
+  const form = document.getElementById('contact-form');
+  const success = document.getElementById('form-success');
+  if (form) {
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form));
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(data)
+        });
+        if (res.ok) { form.style.display = 'none'; success.style.display = 'block'; }
+        else { alert('Submission error. Please try again.'); }
+      } catch { alert('Network error. Please try again.'); }
+    });
+  }
+</script>
+</body>
+</html>

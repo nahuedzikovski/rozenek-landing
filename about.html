@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kanzlei — Steuerkanzlei Rozenek</title>
+  <meta name="description" content="Roy Rozenek, Steuerberater. Internationale Steuerberatung in Frankfurt am Main.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .roy-section { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--line); }
+    .roy-photo {
+      background: var(--bg-dark); min-height: 480px;
+      display: flex; align-items: flex-end; padding: 40px;
+      position: relative; overflow: hidden;
+    }
+    .roy-photo::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(61,90,128,.06) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(61,90,128,.06) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .roy-photo-label { position: relative; font-family: var(--serif); font-size: 28px; font-weight: 300; font-style: italic; color: #fff; line-height: 1.3; }
+    .roy-bio { padding: 64px 48px; display: flex; flex-direction: column; justify-content: center; }
+    .roy-bio-label { font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+    .roy-name { font-family: var(--serif); font-size: 44px; font-weight: 300; margin-bottom: 24px; line-height: 1.1; }
+    .roy-bio-text { font-size: 13px; color: var(--muted); line-height: 1.9; max-width: 440px; }
+    .values-section { padding: 80px 48px; border-bottom: 1px solid var(--line); }
+    .values-label { font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-bottom: 48px; }
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
+    .value-item { border-top: 2px solid var(--accent); padding-top: 24px; }
+    .value-num { font-size: 10px; color: var(--accent); letter-spacing: .1em; margin-bottom: 16px; }
+    .value-title { font-family: var(--serif); font-size: 28px; font-weight: 300; font-style: italic; margin-bottom: 12px; }
+    .value-desc { font-size: 12px; color: var(--muted); line-height: 1.8; }
+    .reach-section { display: grid; grid-template-columns: 1fr 1fr; }
+    .reach-left { padding: 64px 48px; background: rgba(61,90,128,.04); display: flex; flex-direction: column; justify-content: center; border-right: 1px solid var(--line); }
+    .reach-label { font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-bottom: 24px; }
+    .reach-title { font-family: var(--serif); font-size: 36px; font-weight: 300; font-style: italic; line-height: 1.25; margin-bottom: 20px; }
+    .reach-text { font-size: 13px; color: var(--muted); line-height: 1.85; }
+    .reach-right { padding: 64px 48px; display: flex; align-items: center; justify-content: center; }
+    .flags-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .flag-item { text-align: center; }
+    .flag-item .flag { font-size: 48px; margin-bottom: 8px; }
+    .flag-item .flag-label { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+    @media (max-width: 860px) {
+      .roy-section { grid-template-columns: 1fr; }
+      .roy-photo { min-height: 280px; }
+      .roy-bio { padding: 40px 24px; }
+      .values-section { padding: 56px 24px; }
+      .values-grid { grid-template-columns: 1fr; gap: 32px; }
+      .reach-section { grid-template-columns: 1fr; }
+      .reach-right { display: none; }
+    }
+  </style>
+</head>
+<body>
+<div class="cur" id="cur-dot"></div>
+<div class="cur" id="cur-ring"></div>
+<nav>
+  <a href="index.html" class="nav-logo">Steuerkanzlei Rozenek</a>
+  <div class="nav-links">
+    <a href="services.html" data-i18n="nav_services">Leistungen</a>
+    <a href="about.html" class="active" data-i18n="nav_about">Kanzlei</a>
+    <a href="contact.html"  data-i18n="nav_contact">Kontakt</a>
+  </div>
+  <div class="nav-right">
+    <div class="lang-switcher">
+      <button data-lang="de" class="active">DE</button>
+      <span class="lang-sep">|</span>
+      <button data-lang="en">EN</button>
+      <span class="lang-sep">|</span>
+      <button data-lang="he">עב</button>
+    </div>
+    <a href="contact.html" class="nav-cta" data-i18n="nav_cta">Erstberatung</a>
+  </div>
+  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="services.html" data-i18n="nav_services">Leistungen</a>
+  <a href="about.html"    data-i18n="nav_about">Kanzlei</a>
+  <a href="contact.html"  data-i18n="nav_contact">Kontakt</a>
+  <a href="contact.html" class="nav-cta" style="margin-top:8px" data-i18n="nav_cta">Erstberatung</a>
+  <div class="mobile-lang">
+    <button data-lang="de" class="active">DE</button>
+    <button data-lang="en">EN</button>
+    <button data-lang="he">עב</button>
+  </div>
+</div>
+<div class="page-hero">
+  <p class="page-hero-label reveal">Steuerkanzlei Rozenek</p>
+  <h1 class="page-hero-title reveal" data-i18n="page_about_title">Die Kanzlei</h1>
+</div>
+<section class="roy-section">
+  <div class="roy-photo reveal">
+    <div class="roy-photo-label">Roy Rozenek<br>Steuerberater</div>
+  </div>
+  <div class="roy-bio reveal">
+    <p class="roy-bio-label" data-i18n="about_roy_label">Steuerberater · Gründer</p>
+    <h2 class="roy-name">Roy Rozenek</h2>
+    <p class="roy-bio-text" data-i18n="about_roy_bio">Roy Rozenek ist zugelassener Steuerberater mit langjähriger Erfahrung in der Beratung internationaler Unternehmer.</p>
+  </div>
+</section>
+<section class="values-section">
+  <p class="values-label reveal" data-i18n="values_label">Unsere Werte</p>
+  <div class="values-grid">
+    <div class="value-item reveal">
+      <div class="value-num">01</div>
+      <h3 class="value-title" data-i18n="val1_title">Klarheit</h3>
+      <p class="value-desc" data-i18n="val1_desc">Komplexes Steuerrecht in verständliche Strategien übersetzen.</p>
+    </div>
+    <div class="value-item reveal">
+      <div class="value-num">02</div>
+      <h3 class="value-title" data-i18n="val2_title">Partnerschaft</h3>
+      <p class="value-desc" data-i18n="val2_desc">Wir denken langfristig und begleiten Sie bei jeder Entscheidung.</p>
+    </div>
+    <div class="value-item reveal">
+      <div class="value-num">03</div>
+      <h3 class="value-title" data-i18n="val3_title">International</h3>
+      <p class="value-desc" data-i18n="val3_desc">Kompetenz in drei Sprachen und vier Rechtssystemen.</p>
+    </div>
+  </div>
+</section>
+<section class="reach-section">
+  <div class="reach-left">
+    <p class="reach-label reveal" data-i18n="reach_label">Internationale Präsenz</p>
+    <h2 class="reach-title reveal">DE · EU · US · IL</h2>
+    <p class="reach-text reveal" data-i18n="reach_text">Wir beraten Mandanten in Deutschland, der EU, den USA und Israel.</p>
+  </div>
+  <div class="reach-right reveal">
+    <div class="flags-grid">
+      <div class="flag-item"><div class="flag">🇩🇪</div><div class="flag-label">Deutschland</div></div>
+      <div class="flag-item"><div class="flag">🇪🇺</div><div class="flag-label">Europa</div></div>
+      <div class="flag-item"><div class="flag">🇺🇸</div><div class="flag-label">USA</div></div>
+      <div class="flag-item"><div class="flag">🇮🇱</div><div class="flag-label">Israel</div></div>
+    </div>
+  </div>
+</section>
+<section class="cta-band">
+  <p class="cta-band-text reveal" data-i18n="cta_text">Starten Sie mit einer kostenlosen Erstberatung.</p>
+  <div class="cta-band-buttons reveal">
+    <a href="contact.html" class="btn-primary" data-i18n="cta_btn_form">Formular ausfüllen</a>
+    <a href="contact.html" class="btn-wa" data-i18n="cta_btn_wa">WhatsApp ↗</a>
+  </div>
+</section>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">Steuerkanzlei Rozenek</div>
+      <p>Schwindstraße 10<br>60325 Frankfurt am Main<br>+49(0)69 66779068-0<br>info@steuerkanzlei-rozenek.de</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title" data-i18n="footer_col_services">Leistungen</div>
+      <a href="services.html" data-i18n="s1_name">Steueroptimierung</a>
+      <a href="services.html" data-i18n="s2_name">Internationale Strukturen</a>
+      <a href="services.html" data-i18n="s3_name">Vermögensplanung</a>
+      <a href="services.html" data-i18n="s4_name">Digital Consulting</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title" data-i18n="footer_col_firm">Kanzlei</div>
+      <a href="about.html"   data-i18n="nav_about">Kanzlei</a>
+      <a href="contact.html" data-i18n="nav_contact">Kontakt</a>
+      <a href="impressum.html"   data-i18n="footer_impressum">Impressum</a>
+      <a href="datenschutz.html" data-i18n="footer_privacy">Datenschutz</a>
+    </div>
+    <div>
+      <div class="footer-col-title" data-i18n="footer_col_lang">Sprache</div>
+      <div class="footer-flags">🇩🇪 🇬🇧 🇮🇱</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-bottom-left" data-i18n="footer_copy">© 2025 Steuerkanzlei Rozenek · Frankfurt am Main</span>
+    <div class="footer-bottom-right">
+      <a href="impressum.html"   data-i18n="footer_impressum">Impressum</a>
+      <a href="datenschutz.html" data-i18n="footer_privacy">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+<script src="translations.js"></script>
+<script src="i18n.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

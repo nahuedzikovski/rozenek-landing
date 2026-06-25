@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impressum — Steuerkanzlei Rozenek</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .legal-body { max-width: 720px; padding: 64px 48px; }
+    .legal-body h2 { font-family: var(--serif); font-size: 28px; font-weight: 300; font-style: italic; margin: 40px 0 16px; }
+    .legal-body p  { font-size: 13px; color: var(--muted); line-height: 1.85; margin-bottom: 12px; }
+    .legal-body a  { color: var(--accent); }
+    @media (max-width: 480px) { .legal-body { padding: 40px 20px; } }
+  </style>
+</head>
+<body>
+<div class="cur" id="cur-dot"></div>
+<div class="cur" id="cur-ring"></div>
+<nav>
+  <a href="index.html" class="nav-logo">Steuerkanzlei Rozenek</a>
+  <div class="nav-links">
+    <a href="services.html" data-i18n="nav_services">Leistungen</a>
+    <a href="about.html"    data-i18n="nav_about">Kanzlei</a>
+    <a href="contact.html"  data-i18n="nav_contact">Kontakt</a>
+  </div>
+  <div class="nav-right">
+    <div class="lang-switcher">
+      <button data-lang="de" class="active">DE</button>
+      <span class="lang-sep">|</span>
+      <button data-lang="en">EN</button>
+      <span class="lang-sep">|</span>
+      <button data-lang="he">עב</button>
+    </div>
+    <a href="contact.html" class="nav-cta" data-i18n="nav_cta">Erstberatung</a>
+  </div>
+  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="services.html" data-i18n="nav_services">Leistungen</a>
+  <a href="about.html"    data-i18n="nav_about">Kanzlei</a>
+  <a href="contact.html"  data-i18n="nav_contact">Kontakt</a>
+  <div class="mobile-lang">
+    <button data-lang="de" class="active">DE</button>
+    <button data-lang="en">EN</button>
+    <button data-lang="he">עב</button>
+  </div>
+</div>
+<div class="page-hero">
+  <p class="page-hero-label">Steuerkanzlei Rozenek</p>
+  <h1 class="page-hero-title">Impressum</h1>
+</div>
+<div class="legal-body">
+  <h2>Angaben gemäß § 5 TMG</h2>
+  <p>Steuerkanzlei Rozenek<br>Schwindstraße 10<br>60325 Frankfurt am Main<br>Deutschland</p>
+  <h2>Kontakt</h2>
+  <p>Telefon: +49(0)69 66779068-0<br>E-Mail: <a href="mailto:info@steuerkanzlei-rozenek.de">info@steuerkanzlei-rozenek.de</a></p>
+  <h2>Berufsbezeichnung</h2>
+  <p>Berufsbezeichnung: Steuerberater (verliehen in der Bundesrepublik Deutschland)</p>
+  <p><em>Dieser Inhalt wird vom Mandanten vervollständigt. / This content is to be completed by the client.</em></p>
+</div>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><div class="logo">Steuerkanzlei Rozenek</div></div>
+    <div class="footer-col">
+      <div class="footer-col-title" data-i18n="footer_col_services">Leistungen</div>
+      <a href="services.html" data-i18n="s1_name">Steueroptimierung</a>
+      <a href="services.html" data-i18n="s2_name">Internationale Strukturen</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title" data-i18n="footer_col_firm">Kanzlei</div>
+      <a href="about.html" data-i18n="nav_about">Kanzlei</a>
+      <a href="contact.html" data-i18n="nav_contact">Kontakt</a>
+    </div>
+    <div></div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-bottom-left" data-i18n="footer_copy">© 2025 Steuerkanzlei Rozenek · Frankfurt am Main</span>
+    <div class="footer-bottom-right">
+      <a href="impressum.html" data-i18n="footer_impressum">Impressum</a>
+      <a href="datenschutz.html" data-i18n="footer_privacy">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+<script src="translations.js"></script>
+<script src="i18n.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
