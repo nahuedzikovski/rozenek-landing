@@ -41,16 +41,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const burger = document.getElementById('burger');
   const mobileMenu = document.getElementById('mobile-menu');
   if (burger && mobileMenu) {
+    const [s1, s2, s3] = burger.querySelectorAll('span');
+    const closeBurger = () => {
+      mobileMenu.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      s1.style.transform = ''; s2.style.opacity = ''; s3.style.transform = '';
+    };
     burger.addEventListener('click', () => {
       const open = mobileMenu.classList.toggle('open');
       burger.setAttribute('aria-expanded', open);
       document.body.style.overflow = open ? 'hidden' : '';
+      if (open) {
+        s1.style.transform = 'translateY(6px) rotate(45deg)';
+        s2.style.opacity   = '0';
+        s3.style.transform = 'translateY(-6px) rotate(-45deg)';
+      } else {
+        s1.style.transform = ''; s2.style.opacity = ''; s3.style.transform = '';
+      }
     });
     mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        document.body.style.overflow = '';
-      });
+      link.addEventListener('click', closeBurger);
     });
   }
 
