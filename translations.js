@@ -1,6 +1,7 @@
 const TRANSLATIONS = {
   de: {
     /* Nav */
+    nav_home:     'Startseite',
     nav_services: 'Leistungen',
     nav_about:    'Kanzlei',
     nav_contact:  'Kontakt',
@@ -92,6 +93,7 @@ const TRANSLATIONS = {
 
   en: {
     /* Nav */
+    nav_home:     'Home',
     nav_services: 'Services',
     nav_about:    'The Firm',
     nav_contact:  'Contact',
@@ -183,6 +185,7 @@ const TRANSLATIONS = {
 
   he: {
     /* Nav */
+    nav_home:     'ראשי',
     nav_services: 'שירותים',
     nav_about:    'משרדנו',
     nav_contact:  'צור קשר',
