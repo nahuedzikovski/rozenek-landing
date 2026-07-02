@@ -54,21 +54,21 @@ body::after {
   z-index: 9999; will-change: transform;
 }
 #cur-dot  {
-  width: 8px; height: 8px;
-  background: rgba(26,26,24,.9);
-  box-shadow: 0 0 0 2px #fff, 0 0 0 3.5px rgba(26,26,24,.55);
+  width: 10px; height: 10px;
+  background: rgba(26,26,24,.92);
+  box-shadow: 0 0 0 3px #fff, 0 0 0 5px rgba(26,26,24,.65);
   opacity: 1;
   transition: width .22s, height .22s, opacity .22s;
 }
 #cur-ring {
-  width: 36px; height: 36px;
-  border: 1.5px solid rgba(26,26,24,.55);
-  box-shadow: 0 0 0 1.5px rgba(255,255,255,.8);
-  opacity: .75;
+  width: 40px; height: 40px;
+  border: 2px solid rgba(26,26,24,.6);
+  box-shadow: 0 0 0 2px rgba(255,255,255,.9);
+  opacity: .8;
   transition: width .3s, height .3s, opacity .3s;
 }
-body.hovering #cur-dot  { width: 12px; height: 12px; }
-body.hovering #cur-ring { width: 48px; height: 48px; opacity: .9; }
+body.hovering #cur-dot  { width: 14px; height: 14px; }
+body.hovering #cur-ring { width: 52px; height: 52px; opacity: .95; }
 
 /* ── Scroll Reveals ── */
 .reveal {
