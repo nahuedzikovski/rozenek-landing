@@ -65,6 +65,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ── Active nav section ── */
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+  if (sections.length && navLinks.length) {
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = '#' + entry.target.id;
+          navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === id));
+        }
+      });
+    }, { rootMargin: '-20% 0px -80% 0px' });
+    sections.forEach(s => sectionObserver.observe(s));
+  }
+
   /* ── Scroll reveals ── */
   const revealEls = document.querySelectorAll('.reveal');
   if (revealEls.length) {
