@@ -55,20 +55,20 @@ body::after {
 }
 #cur-dot  {
   width: 10px; height: 10px;
-  background: rgba(26,26,24,.92);
-  box-shadow: 0 0 0 3px #fff, 0 0 0 5px rgba(26,26,24,.65);
+  background: var(--accent);
+  box-shadow: 0 0 0 2.5px #fff, 0 0 0 4px rgba(26,26,24,.4);
   opacity: 1;
   transition: width .22s, height .22s, opacity .22s;
 }
 #cur-ring {
-  width: 40px; height: 40px;
-  border: 2px solid rgba(26,26,24,.6);
-  box-shadow: 0 0 0 2px rgba(255,255,255,.9);
+  width: 42px; height: 42px;
+  border: 2px solid rgba(255,255,255,.9);
+  box-shadow: 0 0 0 1.5px rgba(26,26,24,.55);
   opacity: .8;
   transition: width .3s, height .3s, opacity .3s;
 }
 body.hovering #cur-dot  { width: 14px; height: 14px; }
-body.hovering #cur-ring { width: 52px; height: 52px; opacity: .95; }
+body.hovering #cur-ring { width: 54px; height: 54px; opacity: .95; }
 
 /* ── Scroll Reveals ── */
 .reveal {
