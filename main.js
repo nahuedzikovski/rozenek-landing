@@ -11,11 +11,28 @@ let mx = -200, my = -200, rx = -200, ry = -200;
 
 const HOVERABLE = 'a, button, [role="button"]';
 
+function bgLuminance(el) {
+  while (el && el !== document.documentElement) {
+    const bg = window.getComputedStyle(el).backgroundColor;
+    const m = bg.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?/);
+    if (m && (m[4] === undefined || parseFloat(m[4]) > 0.05)) {
+      const [r, g, b] = [+m[1], +m[2], +m[3]].map(c => {
+        c /= 255;
+        return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+      });
+      return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+    }
+    el = el.parentElement;
+  }
+  return 1;
+}
+
 window.addEventListener('mousemove', e => {
   mx = e.clientX; my = e.clientY;
   if (dot) dot.style.transform = `translate(calc(${mx}px - 50%), calc(${my}px - 50%))`;
   const under = document.elementFromPoint(mx, my);
   document.body.classList.toggle('hovering', !!under?.closest(HOVERABLE));
+  document.body.classList.toggle('cursor-dark', bgLuminance(under) < 0.12);
 }, { passive: true });
 
 document.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
