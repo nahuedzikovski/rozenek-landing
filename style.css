@@ -53,22 +53,10 @@ body::after {
   border-radius: 50%; pointer-events: none;
   z-index: 9999; will-change: transform;
 }
-#cur-dot  {
-  width: 10px; height: 10px;
-  background: var(--accent);
-  box-shadow: 0 0 0 2.5px #fff, 0 0 0 4px rgba(26,26,24,.4);
-  opacity: 1;
-  transition: width .22s, height .22s, opacity .22s;
-}
-#cur-ring {
-  width: 42px; height: 42px;
-  border: 2px solid rgba(255,255,255,.9);
-  box-shadow: 0 0 0 1.5px rgba(26,26,24,.55);
-  opacity: .8;
-  transition: width .3s, height .3s, opacity .3s;
-}
-body.hovering #cur-dot  { width: 14px; height: 14px; }
-body.hovering #cur-ring { width: 54px; height: 54px; opacity: .95; }
+#cur-dot  { width: 7px;  height: 7px;  background: var(--accent); opacity: .9; transition: width .22s, height .22s, opacity .22s; }
+#cur-ring { width: 36px; height: 36px; border: 1px solid var(--accent); opacity: .5; transition: width .3s, height .3s, opacity .3s; }
+body.hovering #cur-dot  { width: 11px; height: 11px; opacity: 1; }
+body.hovering #cur-ring { width: 48px; height: 48px; opacity: .7; }
 
 /* ── Scroll Reveals ── */
 .reveal {
