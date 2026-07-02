@@ -135,11 +135,12 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(26,26,24,.07); border-bottom-color: r
 .lang-sep { color: var(--muted); font-size: 13px; }
 
 .nav-cta {
-  border: 1px solid var(--text); padding: 9px 20px;
-  font-size: 11px; letter-spacing: .09em; color: var(--text);
-  transition: background .2s, color .2s; white-space: nowrap;
+  border: 1px solid var(--accent); padding: 9px 20px;
+  font-size: 11px; letter-spacing: .09em; color: #fff;
+  background: var(--accent);
+  transition: background .2s, border-color .2s; white-space: nowrap;
 }
-.nav-cta:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+.nav-cta:hover { background: #2e4460; border-color: #2e4460; }
 
 /* Burger */
 .burger { display: none; flex-direction: column; gap: 5px; padding: 4px; }
