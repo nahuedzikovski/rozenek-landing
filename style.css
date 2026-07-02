@@ -52,12 +52,22 @@ body::after {
   position: fixed; top: 0; left: 0;
   border-radius: 50%; pointer-events: none;
   z-index: 9999; will-change: transform;
-  mix-blend-mode: difference;
 }
-#cur-dot  { width: 7px;  height: 7px;  background: #fff; opacity: .9; transition: width .22s, height .22s, opacity .22s; }
-#cur-ring { width: 36px; height: 36px; border: 1px solid #fff; opacity: .5; transition: width .3s, height .3s, opacity .3s; }
-body.hovering #cur-dot  { width: 11px; height: 11px; opacity: 1; }
-body.hovering #cur-ring { width: 48px; height: 48px; opacity: .7; }
+#cur-dot  {
+  width: 8px; height: 8px; background: #fff;
+  box-shadow: 0 0 0 1.5px rgba(26,26,24,.35), 0 2px 6px rgba(0,0,0,.15);
+  opacity: 1;
+  transition: width .22s, height .22s, opacity .22s;
+}
+#cur-ring {
+  width: 36px; height: 36px;
+  border: 1.5px solid rgba(255,255,255,.8);
+  box-shadow: 0 0 0 1px rgba(26,26,24,.22);
+  opacity: .65;
+  transition: width .3s, height .3s, opacity .3s;
+}
+body.hovering #cur-dot  { width: 12px; height: 12px; }
+body.hovering #cur-ring { width: 48px; height: 48px; opacity: .8; }
 
 /* ── Scroll Reveals ── */
 .reveal {
