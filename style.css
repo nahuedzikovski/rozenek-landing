@@ -4,7 +4,11 @@
 
 /* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 16px); }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-h) + 16px);
+  overflow-x: hidden; /* here instead of body — avoids iOS Safari fixed-positioning bug */
+}
 img  { display: block; max-width: 100%; }
 a    { color: inherit; text-decoration: none; }
 button { border: none; background: none; cursor: pointer; font: inherit; }
@@ -29,13 +33,13 @@ body {
   font-family: var(--sans);
   font-weight: 300;
   line-height: 1.6;
-  overflow-x: hidden;
   padding-top: var(--nav-h);
   animation: pgIn .28s ease-out both;
 }
 @keyframes pgIn {
-  from { opacity: 0; transform: translateY(4px); }
-  to   { opacity: 1; transform: none; }
+  /* opacity-only: no transform on body avoids breaking position:fixed on iOS Safari */
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 /* Grain overlay */
