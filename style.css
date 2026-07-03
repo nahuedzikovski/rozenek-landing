@@ -57,8 +57,9 @@ body::after {
 }
 
 /* ── Custom Cursor ── */
-@media (pointer: fine)  { *, *::before, *::after { cursor: none !important; } }
-@media (pointer: coarse){ .cur { display: none !important; } }
+.cur { display: none !important; }
+/* @media (pointer: fine)  { *, *::before, *::after { cursor: none !important; } } */
+/* @media (pointer: coarse){ .cur { display: none !important; } } */
 .cur {
   position: fixed; top: 0; left: 0;
   border-radius: 50%; pointer-events: none;
