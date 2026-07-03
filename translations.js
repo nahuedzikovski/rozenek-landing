@@ -89,6 +89,18 @@ const TRANSLATIONS = {
     wa_btn:        'Chat öffnen',
     address_label: 'Adresse',
     wa_message:    'Guten Tag, ich interessiere mich für eine kostenlose Erstberatung.',
+
+    /* Impressum page */
+    page_impressum_title: 'Impressum',
+    imp_h2_info:       'Angaben gemäß § 5 TMG',
+    imp_h2_contact:    'Kontakt',
+    imp_h2_profession: 'Berufsbezeichnung',
+
+    /* Datenschutz page */
+    page_datenschutz_title: 'Datenschutz',
+    ds_h2_policy: 'Datenschutzerklärung',
+    ds_h2_form:   'Kontaktformular',
+    ds_h2_rights: 'Ihre Rechte',
   },
 
   en: {
@@ -181,6 +193,18 @@ const TRANSLATIONS = {
     wa_btn:        'Open Chat',
     address_label: 'Address',
     wa_message:    'Hello, I am interested in a free initial consultation.',
+
+    /* Impressum page */
+    page_impressum_title: 'Legal Notice',
+    imp_h2_info:       'Required Information (§ 5 TMG)',
+    imp_h2_contact:    'Contact',
+    imp_h2_profession: 'Professional Title',
+
+    /* Datenschutz page */
+    page_datenschutz_title: 'Privacy Policy',
+    ds_h2_policy: 'Privacy Policy',
+    ds_h2_form:   'Contact Form',
+    ds_h2_rights: 'Your Rights',
   },
 
   he: {
@@ -273,5 +297,17 @@ const TRANSLATIONS = {
     wa_btn:        'פתח צ\'אט',
     address_label: 'כתובת',
     wa_message:    'שלום, אני מעוניין/ת בייעוץ ראשוני חינמי.',
+
+    /* Impressum page */
+    page_impressum_title: 'הצהרה משפטית',
+    imp_h2_info:       'פרטים נדרשים (§ 5 TMG)',
+    imp_h2_contact:    'יצירת קשר',
+    imp_h2_profession: 'תואר מקצועי',
+
+    /* Datenschutz page */
+    page_datenschutz_title: 'מדיניות פרטיות',
+    ds_h2_policy: 'מדיניות פרטיות',
+    ds_h2_form:   'טופס יצירת קשר',
+    ds_h2_rights: 'זכויותיך',
   }
 };
