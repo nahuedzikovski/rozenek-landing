@@ -47,6 +47,19 @@ document.addEventListener('DOMContentLoaded', () => {
   /* #page is the real scroll container — window never scrolls (iOS Safari fix) */
   const pageEl = document.getElementById('page');
 
+  /* ── Pull-to-refresh on #page (lost when body stops scrolling) ── */
+  if (pageEl) {
+    let touchStartY = 0;
+    pageEl.addEventListener('touchstart', e => {
+      touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+    pageEl.addEventListener('touchend', e => {
+      if (pageEl.scrollTop === 0 && e.changedTouches[0].clientY - touchStartY > 70) {
+        window.location.reload();
+      }
+    }, { passive: true });
+  }
+
   /* ── Nav scroll shadow ── */
   const nav = document.querySelector('nav');
   if (nav && pageEl) {
