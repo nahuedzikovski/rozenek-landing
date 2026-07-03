@@ -155,10 +155,19 @@
 
     /* ── Responsive ── */
     @media (max-width: 860px) {
-      .hero       { grid-template-columns: 1fr; min-height: unset; }
-      .hero-right { display: flex; order: -1; min-height: 300px; padding: 24px 20px; }
-      .hero-left  { padding: 36px 20px; border-right: none; }
-      .quote-text { font-size: 18px; }
+      .hero        { grid-template-columns: 1fr; min-height: unset; position: relative; }
+      .hero-right  { display: flex; position: absolute; inset: 0; min-height: unset; padding: 24px 20px; }
+      .hero-right .quote-block { display: none; }
+      .hero-right .hero-img-label { display: none; }
+      .hero-right-overlay { background: rgba(26,26,24,.68); }
+      .hero-left   { position: relative; z-index: 1; padding: 40px 20px; border-right: none; }
+      .hero-label  { color: rgba(255,255,255,.5); }
+      .hero-title  { color: #fff; }
+      .hero-title .kw { color: #93b4d6; }
+      .hero-subtitle { color: rgba(255,255,255,.62); }
+      .hero-stats  { border-top-color: rgba(255,255,255,.12); }
+      .stat-num    { color: #93b4d6; }
+      .stat-label  { color: rgba(255,255,255,.42); }
       .section-head { padding: 36px 20px 32px; }
       .section-head-title { font-size: 36px; }
       .services-list { padding: 0 20px; }
