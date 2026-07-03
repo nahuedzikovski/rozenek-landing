@@ -30,6 +30,7 @@ body {
   font-weight: 300;
   line-height: 1.6;
   overflow-x: hidden;
+  padding-top: var(--nav-h);
   animation: pgIn .28s ease-out both;
 }
 @keyframes pgIn {
@@ -82,10 +83,11 @@ nav {
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 40px; height: var(--nav-h);
   border-bottom: 1px solid var(--line);
-  background: var(--bg);
-  position: sticky; top: 0; z-index: 100;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
+  background-color: #F4F1EB; /* fallback for iOS CSS-var resolution */
+  background-color: var(--bg);
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   transition: box-shadow .25s, border-bottom-color .25s;
 }
 nav.scrolled { box-shadow: 0 2px 20px rgba(26,26,24,.07); border-bottom-color: rgba(26,26,24,.18); }
