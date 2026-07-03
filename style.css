@@ -4,11 +4,7 @@
 
 /* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--nav-h) + 16px);
-  overflow-x: clip; /* clip doesn't create a scroll container — avoids iOS Safari fixed-pos bug */
-}
+html { height: 100%; overflow: hidden; }
 img  { display: block; max-width: 100%; }
 a    { color: inherit; text-decoration: none; }
 button { border: none; background: none; cursor: pointer; font: inherit; }
@@ -28,18 +24,28 @@ button { border: none; background: none; cursor: pointer; font: inherit; }
 
 /* ── Base ── */
 body {
+  height: 100%;
+  overflow: hidden; /* body never scrolls — #page handles scroll, fixing iOS Safari nav bug */
   background: var(--bg);
   color: var(--text);
   font-family: var(--sans);
   font-weight: 300;
   line-height: 1.6;
-  padding-top: var(--nav-h);
   animation: pgIn .28s ease-out both;
 }
 @keyframes pgIn {
-  /* opacity-only: no transform on body avoids breaking position:fixed on iOS Safari */
   from { opacity: 0; }
   to   { opacity: 1; }
+}
+
+/* ── Scroll container ── */
+#page {
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-h) + 16px);
+  padding-top: var(--nav-h);
 }
 
 /* Grain overlay */

@@ -1,5 +1,3 @@
-// pgIn animation on body creates a stacking context that breaks position:fixed cursors.
-// Remove the animation once done (400ms fallback) to restore normal fixed positioning.
 const clearBodyAnim = () => { document.body.style.animation = 'none'; };
 document.body.addEventListener('animationend', clearBodyAnim, { once: true });
 setTimeout(clearBodyAnim, 400);
@@ -46,11 +44,14 @@ document.addEventListener('mouseleave', () => document.body.classList.remove('ho
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  /* #page is the real scroll container — window never scrolls (iOS Safari fix) */
+  const pageEl = document.getElementById('page');
+
   /* ── Nav scroll shadow ── */
   const nav = document.querySelector('nav');
-  if (nav) {
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 10);
+  if (nav && pageEl) {
+    pageEl.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', pageEl.scrollTop > 10);
     }, { passive: true });
   }
 
@@ -62,13 +63,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeBurger = () => {
       mobileMenu.classList.remove('open');
       burger.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
+      if (pageEl) pageEl.style.overflow = '';
       s1.style.transform = ''; s2.style.opacity = ''; s3.style.transform = '';
     };
     burger.addEventListener('click', () => {
       const open = mobileMenu.classList.toggle('open');
       burger.setAttribute('aria-expanded', open);
-      document.body.style.overflow = open ? 'hidden' : '';
+      if (pageEl) pageEl.style.overflow = open ? 'hidden' : '';
       if (open) {
         s1.style.transform = 'translateY(6px) rotate(45deg)';
         s2.style.opacity   = '0';
@@ -85,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ── Active nav section ── */
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-  if (sections.length && navLinks.length) {
+  if (sections.length && navLinks.length && pageEl) {
     const sectionObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -93,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
           navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === id));
         }
       });
-    }, { rootMargin: '-20% 0px -80% 0px' });
+    }, { root: pageEl, rootMargin: '-20% 0px -80% 0px' });
     sections.forEach(s => sectionObserver.observe(s));
   }
 
@@ -107,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
           observer.unobserve(e.target);
         }
       });
-    }, { threshold: 0.12 });
+    }, { root: pageEl || null, threshold: 0.12 });
     revealEls.forEach(el => observer.observe(el));
   }
 
