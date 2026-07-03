@@ -155,8 +155,10 @@
 
     /* ── Responsive ── */
     @media (max-width: 860px) {
-      .hero { grid-template-columns: 1fr; }
-      .hero-right { display: none; }
+      .hero       { grid-template-columns: 1fr; min-height: unset; }
+      .hero-right { display: flex; order: -1; min-height: 300px; padding: 24px 20px; }
+      .hero-left  { padding: 36px 20px; border-right: none; }
+      .quote-text { font-size: 18px; }
       .section-head { padding: 36px 20px 32px; }
       .section-head-title { font-size: 36px; }
       .services-list { padding: 0 20px; }
