@@ -11,8 +11,8 @@ button { border: none; background: none; cursor: pointer; font: inherit; }
 
 /* ── Tokens ── */
 :root {
-  --bg:      #F4F1EB;
-  --bg-dark: #1A1A18;
+  --bg:      #F8F8F7;
+  --bg-dark: #0C0C0B;
   --text:    #1A1A18;
   --muted:   #7A7A76;
   --accent:  #3D5A80;
@@ -94,7 +94,7 @@ nav {
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 40px; height: var(--nav-h);
   border-bottom: 1px solid var(--line);
-  background-color: #F4F1EB; /* fallback for iOS CSS-var resolution */
+  background-color: #F8F8F7; /* fallback for iOS CSS-var resolution */
   background-color: var(--bg);
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   -webkit-transform: translate3d(0,0,0);
